@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创投魔方</title>
+	<link rel="shortcut icon" href="img/favicon.png">
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/twitter-bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<style>
+input{
+	outline:none;
+	border:none;
+	background:none;
+}
+.just-private{
+	width:100%;
+	height:128px;
+ 	/*渐变效果*/
+ 	background: -webkit-linear-gradient(left,  blue, #6e05c1); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(right, blue, #6e05c1); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(right, blue, #6e05c1); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, blue, #6e05c1); /* 标准的语法 */
+    color:#fff;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-size:4rem;
+}
+.school-meal{
+	width:100%;
+	padding:88px 0;
+	background:url(img/school.png)0 0 no-repeat;
+	background-size:100%;
+}
+.school-meal-ul{
+	width:80%;
+	display:flex;
+	justify-content: center;
+	flex-wrap:wrap;
+	margin:0 auto;
+
+}
+.school-meal-ul > li{
+	width:187px;
+	height:435px;
+	background:#359cfb;
+	margin-right:5px;
+	margin-left:5px;
+	margin-bottom:10px;
+	display:flex;
+	justify-content: center;
+	border:5px solid transparent;
+
+}
+.school-meal-ul > li:hover{
+	opacity:0.9;
+	box-shadow:0px 0px 10px -3px #8600ea;
+}
+.school-meal-ul > .school-meal-ul-firC{
+	border:4px solid #8600ea;
+}
+.school-meal-ul > li:hover .school-four-font{
+	color:#fff;
+	background: #28FF28;
+}
+
+.change-fine{
+	color:#fff;
+	font-weight:200;
+}
+
+.school-meal-ul-a{
+	width:187px;
+	height:435px;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	flex-direction:column;
+	color:#fff;
+	box-sizing: border-box;
+
+
+ 
+}
+.school-meal-ul-a:hover{
+	color:#fff;
+}
+
+.scrool-four-main{
+	width:100%;
+	height:50px;
+	margin-top:100px;
+	background:red;
+}
+ .school-four-font{
+ 	padding:8px 30px;
+ 	background:#fff;
+ 	color:#359cfb;
+ 	border-radius:100px;
+	
+ }
+ .school-one{
+ 	font-size:1.2rem;
+ 	font-weight:700;
+ }
+ .school-two{
+ 	margin-top:22px;
+ }
+ .school-three{
+ 	margin-top:22px;
+ 	font-size:1rem;
+ }
+ .school-four{
+ 	margin-top:35px;
+ }
+ .school-five-main{
+	 margin-top:45px;
+	 font-size:1rem;
+	 transform:scale(0.9);
+}
+.school-five{
+	margin-top:8px;
+}
+.school-meal-free{
+	font-size:23px;
+	margin:0 10px;
+}
+.school-five-one{
+	margin-right:70px;
+}
+.school-five-two{
+	margin-right:40px;
+}
+.school-five-three{
+	margin-right:25px;
+}
+.school-five-four{
+	margin-right:54.5px;
+}
+.school-five-five,
+.school-five-six{
+	margin-right:54px;
+}
+.school-meal-ul > .school-meal-ul-secC{
+	background: #177cd8;
+}
+.school-meal-ul > .school-meal-ul-thirC{
+	background: #095caa;
+}
+.school-meal-ul > .school-meal-ul-fourC{
+	background: #053d70;
+}
+.school-five-toRight{
+	margin-right:76px;
+}
+.school-five-toRightM{
+	margin-right:78px;
+}
+.school-five-leftM{
+	margin-right:22px;
+}
+.moFanSchool{
+	width:100%;
+	cursor: pointer;
+}
+.moFanSchool > img{
+	width:100%;
+	display:block;
+}
+.school-five-leftMM{
+	margin-right:51.5px;
+}
+.concact-detail{
+	width:100%;
+	height:410px;
+	/*background:#ccc;*/
+	box-sizing:border-box;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+.concact-detail-main{
+	width:459px;
+	height:300px;
+	/*background:coral;*/
+	display: flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction:column;
+	font-size:1rem;
+
+}
+.concact-detail-main-fontEn{
+	width:100%;
+	white-space: nowrap;
+	word-break: nowrap;
+	font-size:1rem;
+	transform:scale(0.8);
+}
+.concact-detail-main-fontTitle{
+	font-size:2.1rem;
+}
+
+.concactName{
+	height:25px;
+	display:flex;
+	align-items:center;
+	margin-top:10px;
+	background:#dbf0f7;
+	border-radius:100px;
+	box-sizing: border-box;
+	padding-left:10px;
+	color:#5c5858;
+
+
+}
+
+.concactMessage-textaria{
+	width:300px;
+	height:100px;
+	resize: none;
+	/*border-radius:10px;*/
+	outline: none;
+	padding-left:10px;
+	border:none;
+	background:none;
+	overflow-x:hidden;
+}
+.concactName-input{
+	margin-left:5px;
+}
+.concactName-logo{
+	margin-left:3px;
+}
+.concactMessage-top{
+	height:25px;
+	display:flex;
+	align-items:center;
+	margin-top:10px;
+	box-sizing: border-box;
+	padding-left:10px;
+}
+.concactMessage{
+	background:#dbf0f7;
+	border-radius:10px;
+    color:#5c5858;;
+
+}
+.concactMessage-font{
+	margin-left:3px;
+}
+.changePurple{
+	color:#5112a7;
+}
+.message-submit{
+	background:#8052f3;
+	display: block;
+	margin:0 auto;
+	margin-top:15px;
+	border-radius:100px;
+	padding:5px 30px;
+	color:#fff;
+}
+.message-submit:hover{
+	opacity:0.8;
+}
+.bottom{
+	width:100%;
+	height:100px;
+	background:#4124b2;
+}
+.bott-nav{
+	width:100%;
+	height:68px;
+	background:#4124b2;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+.bott-statement{
+	width:100%;
+	height:32px;
+	background:#000;
+	color:#c9c6c6;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+.bott-statement-font{
+	font-size:1rem;
+	transform:scale(0.8);
+	word-break: nowrap;
+	white-space: nowrap;
+}
+.bott-nav-child{
+	height:68px;
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content: center;
+	margin-right:32.5px;
+	margin-left: 32.5px;
+	color:#fff;
+	font-size:1rem;
+	transform: scale(0.9);
+}
+.bott-nav-child:hover{
+	cursor:pointer;
+
+}
+
+.bott-nav-one{
+	color:#dbd7d7;
+
+}
+.bott-nav-two{
+	color:#ede7e7;
+	margin-top:3px;
+	transform: scale(0.9);
+}
+.bott-nav-child:hover .bott-nav-two{
+	color:#dbd7d7;
+	
+}
+.thanks{
+	white-space: nowrap;
+	word-break: nowrap;
+	font-size:1rem;
+	color:#ccc;
+	text-align:center;
+}
+ @media screen and (max-width:520px){
+	.school-meal{
+		width:520px;
+	}
+}
+@media screen and (max-width:413px){
+	.private-six{
+		width:413px;
+	}
+}
+</style>
+<body>
+	<div class="container-fiuled">
+		<div class="head">
+			<img src="img/head.png" alt="" class="container-fiuled-bg-img">
+			<div class="head-nav">
+				<div class="head-nav-main">
+					<span class="vc-font">创投魔方</span>
+					<div class="head-nav-content">
+						<ul class="head-nav-content-ul">
+							<li>
+
+								<div class="btn-group">
+									<button type="button" class="btn change-buttom-height dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:transparent;border:2px solid #fff;border-radius:100px;">
+										<span class="caret tri-change-white"></span>&nbsp;<span class="changeHomeColor">HOME</span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="btn-group">
+									<button type="button" class="btn change-buttom-height dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:transparent;border:2px solid transparent;border-radius:100px;">
+										<span class="caret tri-change-white"></span>&nbsp;<span class="changeHomeColor">HOME</span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="btn-group">
+									<button type="button" class="btn change-buttom-height dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:transparent;border-radius:100px;border:2px solid transparent;">
+										<span class="caret tri-change-white"></span>&nbsp;<span class="changeHomeColor">HOME</span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="btn-group">
+									<button type="button" class="btn change-buttom-height dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:transparent;border-radius:100px;border:2px solid transparent;">
+										<span class="caret tri-change-white"></span>&nbsp;<span class="changeHomeColor">HOME</span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="btn-group">
+									<button type="button" class="btn change-buttom-height dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:transparent;border-radius:100px;border:2px solid transparent;">
+										<span class="caret tri-change-white"></span>&nbsp;<span class="changeHomeColor">HOME</span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="btn-group">
+									<button type="button" class="btn change-buttom-height dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:transparent;border-radius:100px;border:2px solid transparent;">
+										<span class="caret tri-change-white"></span>&nbsp;<span class="changeHomeColor">HOME</span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+
+					</div>
+
+					<div class="head-nav-img">
+						<div class="head-nav-img-font">
+							<a href="http://www.baidu.com" class="head-font-to"><i class="fa fa-facebook"></i></a>
+						</div>
+						<div class="head-nav-img-font" style="font-weight:600">
+							<a href="http://www.baidu.com" class="head-font-to">a</a>
+						</div>
+						<!-- Example of  -->
+						<div class="head-nav-img-font">
+							<a href="http://www.baidu.com" class="head-font-to"><i class="fa fa-twitter"></i></a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<a class="goToContact" href="http://www.find333.com">CONCACT&nbsp;US</a>
+		</div>
+		<div class="investor-shenqi">
+			<img src="img/nav_ten.png" alt="" class="investor-shenqi-bg">
+			<div class="investor-shenqi-title">
+				<div class="investor-shenqi-title-main">
+					<div class="investor-shenqi-title-bigFont">投资人的效率利器<div>
+						<div class="english-font">Investor's efficiency tool yes yes good</div>
+						<div class="line"></div>
+					</div>
+				</div>
+				<div class="investor-shenqi-nav">
+					<ul class="investor-shenqi-nav-ul">
+						<li>
+							<a href="http://www.find333.com" class="head-nav-content-ul-a">
+								<img src="img/itemManage.png" class="investor-shenqi-nav-ul-top">
+								<div class="investor-shenqi-nav-ul-center">项目管理</div>
+								<div class="investor-shenqi-nav-ul-bottom">Project&nbsp;Management</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.find333.com" class="head-nav-content-ul-a">
+								<img src="img/raw_03.png" class="investor-shenqi-nav-ul-top">
+								<div class="investor-shenqi-nav-ul-center">基金管理</div>
+								<div class="investor-shenqi-nav-ul-bottom">Project&nbsp;Management</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.find333.com" class="head-nav-content-ul-a">
+								<img src="img/raw_05.png" class="investor-shenqi-nav-ul-top">
+								<div class="investor-shenqi-nav-ul-center">投资管理</div>
+								<div class="investor-shenqi-nav-ul-bottom">Project&nbsp;Management</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.find333.com" class="head-nav-content-ul-a">
+								<img src="img/raw_07.png" class="investor-shenqi-nav-ul-top">
+								<div class="investor-shenqi-nav-ul-center">投资分析</div>
+								<div class="investor-shenqi-nav-ul-bottom">Project&nbsp;Management</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.find333.com" class="head-nav-content-ul-a">
+								<img src="img/raw_09.png" class="investor-shenqi-nav-ul-top">
+								<div class="investor-shenqi-nav-ul-center">OA系统</div>
+								<div class="investor-shenqi-nav-ul-bottom">Project&nbsp;Management</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.find333.com" class="head-nav-content-ul-a">
+								<img src="img/raw_16.png" class="investor-shenqi-nav-ul-top">
+								<div class="investor-shenqi-nav-ul-center">文件管理</div>
+								<div class="investor-shenqi-nav-ul-bottom">Project&nbsp;Management</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.find333.com" class="head-nav-content-ul-a">
+								<img src="img/raw_18.png" class="investor-shenqi-nav-ul-top">
+								<div class="investor-shenqi-nav-ul-center">LP/项目方管理</div>
+								<div class="investor-shenqi-nav-ul-bottom">Project&nbsp;Management</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.find333.com" class="head-nav-content-ul-a">
+								<img src="img/raw_19.png" class="investor-shenqi-nav-ul-top">
+								<div class="investor-shenqi-nav-ul-center">权限控制</div>
+								<div class="investor-shenqi-nav-ul-bottom">Project&nbsp;Management</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.find333.com" class="head-nav-content-ul-a">
+								<img src="img/raw_20.png" class="investor-shenqi-nav-ul-top">
+								<div class="investor-shenqi-nav-ul-center">魔方工具</div>
+								<div class="investor-shenqi-nav-ul-bottom">Project&nbsp;Management</div>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.find333.com" class="head-nav-content-ul-a">
+								<img src="img/raw_21.png" class="investor-shenqi-nav-ul-top">
+								<div class="investor-shenqi-nav-ul-center">安全提醒</div>
+								<div class="investor-shenqi-nav-ul-bottom">Project&nbsp;Management</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 改变在路上的投资人 -->
+
+		<div class="changeAtWay">
+			<div class="changeAtWay-title">
+				改变 “ 在路上 ” 的投资人
+				<div class="line line-margin"></div>
+			</div>
+			<div class="changeAtWay-img">
+				<img src="img/a_03.png" alt="" class="changeAtWay-img-left">
+				<img src="img/a_05.png" alt="" class="changeAtWay-img-right">
+			</div>
+		</div>
+		<!-- send the... -->
+		<div class="send-the-phoneNumber">
+			<div class="send-the-phoneNumber-left">
+				<div class="send-the-phoneNumber-en">
+					Send the request with your phone number
+				</div>
+				<div class="send-the-phoneNumber-en-bott">
+					<div class="send-the-phoneNumber-en-bott-line"></div>
+					<div class="send-the-phoneNumber-en-bott-right">and we will call you</div>
+				</div>
+			</div>
+			<a href="http://www.baidu.com" class="send-the-phoneNumber-right">CONTACT&nbsp;US</a>
+		</div>
+		<div class="changeAtWay changeAtWay-next">
+			<div class="changeAtWay-title changeAtWay-title-next">
+				改变 “ 在路上 ” 的投资人
+				<div class="line line-margin"></div>
+			</div>
+			<div class="changeAtWay-img changeAtWay-img-next-main">
+				<img src="img/a_10.png" alt="" class="changeAtWay-img-next">
+			</div>
+		</div>
+		<!-- 放截图功能 -->
+		<div class="private">
+			<span class="private-top">PRIVATE&nbsp;SCHOLL</span>
+			<span class="private-bottom">PRIVATE&nbsp;SCHOLL</span>
+		</div>
+		<div class="private-six">
+			<ul class="private-six-ul">
+				<li>
+					<div class="private-six-ul-bgLi"></div>
+				</li>
+				<li>
+					<div class="private-six-ul-bgLi-blue"></div>
+					<div class="warn">放功能截图</div>
+				</li>
+				<li>
+					<div class="private-six-ul-bgLi"></div>
+				</li>
+				<li>
+					<div class="private-six-ul-bgLi-blue"></div>
+				</li>
+				<li>
+					<div class="private-six-ul-bgLi"></div>
+				</li>
+				<li>
+					<div class="private-six-ul-bgLi-blue"></div>
+				</li>
+			</ul>
+		</div>
+		<!-- PRIVATE -->
+		<div class="just-private">PRIVATE&nbsp;SCHOOL</div>
+		<!-- school -->
+		<div class="school-meal">
+			<ul class="school-meal-ul">
+				<li class="school-meal-ul-firC">
+					<a href="javascript:" class="school-meal-ul-a">
+						<div class="school-one">免费版</div>
+						<div class="school-two">￥<span class="school-meal-free">0</span>元/月</div>
+						<div class="school-three">适用于个人或者机构体验适用</div>
+						<div class="school-four">
+							<span class="school-four-font">开始试用</span>
+						</div>
+						<div class="school-five-main">
+							<div class="school-five">
+								<span class="school-five-one">储存空间</span><span>200M</span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-two">支持机构用户数</span><span>2人</span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-three">LP/项目方系统支持</span><span class="fa fa-close change-fine"></span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-four">项目云库支持</span><span class="fa fa-close change-fine"></span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-five">项目跟踪支持</span><span class="fa fa-close change-fine"></span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-six">基金一键报告</span><span class="fa fa-close change-fine"></span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="school-meal-ul-secC">
+					<a href="http://www.baidu.com" class="school-meal-ul-a">
+						<div class="school-one">标准版</div>
+						<div class="school-two">￥<span class="school-meal-free">199</span>元/月</div>
+						<div class="school-three">适用于3-5人小规模机构</div>
+						<div class="school-four">
+							<span class="school-four-font">开始试用</span>
+						</div>
+						<div class="school-five-main">
+							<div class="school-five">
+								<span class="school-five-one school-five-toRight">储存空间</span><span>1G</span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-two">支持机构用户数</span><span>5人</span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-three school-five-leftM">LP/项目方系统支持</span><span class="fa fa-check-square-o change-fine"></span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-four school-five-leftMM">项目云库支持</span><span class="fa fa-check-square-o change-fine"></span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-five school-five-leftMM">项目跟踪支持</span><span class="fa fa-check-square-o change-fine"></span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-six school-five-leftMM">基金一键报告</span><span class="fa fa-check-square-o change-fine"></span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="school-meal-ul-thirC">
+					<a href="http://www.baidu.com" class="school-meal-ul-a">
+						<div class="school-one">高级版</div>
+						<div class="school-two">￥<span class="school-meal-free">499</span>元/月</div>
+						<div class="school-three">适用于6-10人中等规模机构</div>
+						<div class="school-four">
+							<span class="school-four-font">开始试用</span>
+						</div>
+						<div class="school-five-main">
+							<div class="school-five">
+								<span class="school-five-one school-five-toRightM">储存空间</span><span>5G</span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-two">支持机构用户数</span><span>10人</span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-three">LP/项目方系统支持</span><span class="fa fa-check-square-o change-fine"></span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-four">项目云库支持</span><span class="fa fa-check-square-o change-fine"></span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-five">项目跟踪支持</span><span class="fa fa-check-square-o change-fine"></span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-six">基金一键报告</span><span class="fa fa-check-square-o change-fine"></span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="school-meal-ul-fourC">
+					<a href="javascript:" class="school-meal-ul-a">
+						<div class="school-one">豪华版</div>
+						<div class="school-two">￥<span class="school-meal-free">999</span>元/月</div>
+						<div class="school-three">适用于10人以上较大规模机构</div>
+						<div class="school-four">
+							<span class="school-four-font">开始试用</span>
+						</div>
+						<div class="school-five-main">
+							<div class="school-five">
+								<span class="school-five-one  school-five-toRight">储存空间</span><span>10G</span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-two">支持机构用户数</span><span>100人</span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-three">LP/项目方系统支持</span><span class="fa fa-check-square-o change-fine"></span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-four">项目云库支持</span><span class="fa fa-check-square-o change-fine"></span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-five">项目跟踪支持</span><span class="fa fa-check-square-o change-fine"></span>
+							</div>
+							<div class="school-five">
+								<span class="school-five-six">基金一键报告</span><span class="fa fa-check-square-o change-fine"></span>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 魔方学堂 -->
+		<div class="moFanSchool">
+			<img src="img/a_26.png" alt="" class="moFanSchool-img">
+		</div>
+		<!-- 联系具体发送途径 -->
+		<div class="concact-detail">
+			<div class="concact-detail-main">
+				<div class="concact-detail-main-fontTitle">Concact&nbsp;Us</div>
+				<div class="concact-detail-main-fontEn">if you have any questions concerning our services,please fill out the concact form below</div>
+				<form action="Concact.php" method="post" class="concact-detail-main-form">
+					<div class="concactName">
+						<span class="fa fa-user changePurple"></span><span class="concactName-logo">Name*</span>
+						<input type="text" class="concactName-input" name="name" maxlength="100">
+					</div>
+					<div class="concactName">
+						<span class="fa fa-envelope changePurple"></span><span class="concactName-logo">Email*</span>
+						<input type="text" class="concactName-input" name="email" maxlength="100">
+					</div>
+					 
+					<div class="concactMessage">
+						<div class="concactMessage-top">
+							<span class="fa fa-paint-brush changePurple"></span><span class="concactMessage-font">Message*</span>
+						</div>
+						<textarea class="concactMessage-textaria" name="textarea" maxlength="1000" placeholder="Thank you for your message">
+							 
+						</textarea>	
+						<div class="thanks">Thank you for your message!</div>
+					</div>
+					<input type="submit" class="message-submit" value="submit">
+				</form>
+			</div>
+		</div>
+		<!-- 最底部 -->
+		<div class="bottom">
+			<div class="bott-nav">
+				<a href="http://www.find333.com" class="bott-nav-child">
+					<span class="bott-nav-one">ABOUT&nbsp;US</span>
+					<span class="bott-nav-two">关于我们</span>
+				</a>
+				<a href="http://www.find333.com" class="bott-nav-child">
+					<span class="bott-nav-one">CONTACT&nbsp;US</span>
+					<span class="bott-nav-two">联系我们</span>
+				</a>
+				<a href="http://www.find333.com" class="bott-nav-child">
+					<span class="bott-nav-one">NEWS</span>
+					<span class="bott-nav-two">新闻消息</span>
+				</a>
+			</div>
+			<div class="bott-statement">
+				<span class="bott-statement-font">隐私声明|京|CP备13031685号 京公网安备11010102001665号2018-2019@GEOTMT.COM
+				</span>
+			</div>
+		</div>
+
+	</div>
+	<script>
+	// window.onload=function(){
+	// 	document.body.scrollTop=500;
+	// }
+		$(function(){
+			
+			// 出现奇怪问题，js强制设置
+			$(".school-meal-ul-a").css({"color":"#fff"});
+			$(".school-meal-ul-a").hover(function(){
+
+			},function(){
+				$(this).css("text-decoration","none")
+			})
+			let changeHeadBorderEle=$('.head-nav-content-ul > li');
+			changeHeadBorderEle.on("click",function(e){
+				changeHeadBorderEle.children(".btn-group").children(".btn").css("border","2px solid transparent")
+				$(e.currentTarget).children(".btn-group").children(".btn").css({"border":"2px solid #fff"})
+			})
+			changeHeadBorderEle.hover(function(e){
+				$(e.currentTarget).children(".btn-group").children(".btn").css({"background":"#59cbf7"})
+			},function(e){
+				$(e.currentTarget).children(".btn-group").children(".btn").css("background","transparent")
+
+			})
+			// 根据需求,随着浏览器窗口改变字的大小也相应的改变。也可用媒体查询
+			// window.onresize=function(){
+			// 	 $('html').css("font-size","12px")
+			// }
+			// 套餐选择
+			const schoolMealLi=$(".school-meal-ul > li");
+			schoolMealLi.on("click",function(){
+				// console.log(11232)
+				
+				schoolMealLi.css({"border":"4px solid transparent"});
+				$(this).css({"border":"4px solid #8600ea"});
+
+			})
+			$(".concactMessage-textaria")[0].onclick=function(){
+				// 定义光标的位置
+				let index=this.value.replace(/\s/g,"").length,
+				    elem=this;
+
+				if (elem.setSelectionRange) {
+					elem.setSelectionRange(index, index);
+				} else {
+					var range = elem.createTextRange();
+					var len = elem.value.length;
+					range.moveStart('character', -len);
+					range.moveEnd('character', -len);
+					range.moveStart('character', index);
+					range.moveEnd('character', 0);
+					range.select();
+				}
+
+				
+			}
+			$(".concactMessage").on("click",function(){
+				 $(".concactMessage-textaria")[0].focus();	
+			})
+			// 点击文本父亲也能focus
+			// 魔方学院跳转
+			$(".moFanSchool").on("click",function(){
+				location="https://vcsaas.cn/app/access/signin"
+			})
+		}) 
+
+	</script>
+</body>
+</html>
